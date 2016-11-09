@@ -9,8 +9,7 @@ import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -24,8 +23,8 @@ public class ImageController {
 	private ImageService imageService;
 	
 	@ResponseBody
-	@RequestMapping(value = "image", method = RequestMethod.GET)
-	public ResponseEntity<InputStreamResource> downloadImage(@RequestParam ("imageid") Integer imageid) throws FileNotFoundException {
+	@GetMapping(value = "/image")
+	public ResponseEntity<InputStreamResource> downloadImage(@RequestParam Integer imageid) throws FileNotFoundException {
 		Image image = imageService.getImage(imageid);
 		File imageFile = new File(image.getFilepath());
 	

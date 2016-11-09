@@ -1,11 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%
-	response.setHeader("Cache-Control", "no-cache");
-	response.setHeader("Pragma", "no-cache");
-	response.setHeader("Expires", "0");
-%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -52,14 +46,13 @@
 		<br><br><p>Here's all the images listed in chronological order.</p>
 
 		<div class="gallery">
-	
 		<table>
 			<c:forEach items="${images}" var="image">
-				<c:url var="imageURL" value="/image" >
-					<c:param name="imageid" value="${image.imageid}"/>
+				<c:url var="imageURL" value="/image">
+					<c:param name="imageid" value="${image.imageid}" />
 				</c:url>
 				<tr>
-					<td><img src="<c:out value="${imageURL}"/>‌‌"></td>
+					<td><img src="${imageURL}"/>‌‌</td>
 				</tr>
 			</c:forEach>
 		</table>

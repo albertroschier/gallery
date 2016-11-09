@@ -25,11 +25,8 @@ public class ImageController {
 	
 	@ResponseBody
 	@RequestMapping(value = "image", method = RequestMethod.GET)
-	public ResponseEntity<InputStreamResource> downloadImage(@RequestParam ("imageid") String imageid) throws FileNotFoundException {
-	
-		System.out.println(imageid);
-		int number = Integer.parseInt(imageid);
-		Image image = imageService.getImage(number);
+	public ResponseEntity<InputStreamResource> downloadImage(@RequestParam ("imageid") Integer imageid) throws FileNotFoundException {
+		Image image = imageService.getImage(imageid);
 		File imageFile = new File(image.getFilepath());
 	
 	return ResponseEntity.ok()

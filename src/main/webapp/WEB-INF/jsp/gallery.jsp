@@ -21,6 +21,7 @@
 
 <link rel="icon" href="">
 <link href="${pageContext.request.contextPath}/public/style.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/public/images.css" rel="stylesheet" type="text/css" />
 <title>Gallery</title>
 
 </head>
@@ -33,46 +34,48 @@
 	
 	<input id="tab1" type="radio" name="tabs" checked>
 	<label for="tab1">Front</label>
-	
+
 	<input id="tab2" type="radio"name="tabs">
 	<label for="tab2">Images</label>
-	
+
 	<input id="tab3" type="radio" name="tabs">
 	<label for="tab3">Albums</label>
-	
+
 	<input id="tab4" type="radio" name="tabs">
 	<label for="tab4">About</label>
 
 	<section id="content1">
 		<br><br><p>Welcome to the gallery!</p>
-		
 	</section>
-
+	
 	<section id="content2">
 		<br><br><p>Here's all the images listed in chronological order.</p>
 
-	<table>
-		<c:forEach items="${images}" var="image">
-			<c:url var="imageURL" value="/image" >
-				<c:param name="imageid" value="${image.imageid}"/>
-			</c:url>
-			<tr>
-				<td><img src="<c:out value="${imageURL}"/>‌‌"></td>
-			</tr>
-		</c:forEach>
-	</table>
-		
-	</section>
+		<div class="gallery">
+	
+		<table>
+			<c:forEach items="${images}" var="image">
+				<c:url var="imageURL" value="/image" >
+					<c:param name="imageid" value="${image.imageid}"/>
+				</c:url>
+				<tr>
+					<td><img src="<c:out value="${imageURL}"/>‌‌"></td>
+				</tr>
+			</c:forEach>
+		</table>
+	
+		</div>
 
+	</section>
+	
 	<section id="content3">
 		<br><br><p>Here are the images that are neatly organized into albums.</p>
-		
 	</section>
 
 	<section id="content4">
 		<br><br><p>This is an experimental image gallery made using Spring Boot, MySQL and various other tools.</p>
 	</section>
-	
+
 </main>
 
 <div class="footer">© 2016 Albert Roschier</div>

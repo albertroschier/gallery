@@ -103,29 +103,27 @@ input:checked+label {
 	border-bottom: 1px solid transparent;
 }
 
-#tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~ #content3, #tab4:checked ~ #content4 {
+#tab1:checked ~ #content1, #tab2:checked ~ #content2, #tab3:checked ~
+	#content3, #tab4:checked ~ #content4 {
 	display: block;
 }
 
 @media screen and (max-width: 650px) {
-	
 	label {
 		font-size: 0;
 	}
-	
 	label:before {
 		margin: 0;
 		font-size: 18px;
 	}
-	
 }
 
 .footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  font-size: 13px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	text-align: center;
+	font-size: 13px;
 }

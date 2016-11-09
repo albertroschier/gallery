@@ -20,7 +20,7 @@
 <head>
 
 <link rel="icon" href="">
-<link href="${pageContext.request.contextPath}/resources/style.css"rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/public/style.css" rel="stylesheet" type="text/css" />
 <title>Gallery</title>
 
 </head>
@@ -53,11 +53,11 @@
 
 	<table>
 		<c:forEach items="${images}" var="image">
-			<c:url var="imageUrl" value="image" >
+			<c:url var="imageURL" value="/image" >
 				<c:param name="imageid" value="${image.imageid}"/>
 			</c:url>
 			<tr>
-				<td><img src="<c:out value="${imageUrl}"/>‌‌"></td>
+				<td><img src="<c:out value="${imageURL}"/>‌‌"></td>
 			</tr>
 		</c:forEach>
 	</table>

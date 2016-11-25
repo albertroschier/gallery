@@ -1,84 +1,145 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<%
+<% 
 	response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Pragma", "no-cache");
 	response.setHeader("Expires", "0");
 %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="ctx" value="${pageContext['request'].contextPath}" />
 
 <html>
 
 <head>
-
-<link rel="icon" href="">
-<link href="${pageContext.request.contextPath}/public/style.css" rel="stylesheet" type="text/css" />
-<link href="${pageContext.request.contextPath}/public/images.css" rel="stylesheet" type="text/css" />
-<title>Gallery</title>
-
+	<link href="${pageContext.request.contextPath}/public/loader.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/public/style.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/public/transition.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/public/images.css" rel="stylesheet" type="text/css" />
+	<link href="${pageContext.request.contextPath}/public/albums.css" rel="stylesheet" type="text/css" />
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="/public/scripts/loader.js" type="text/javascript"></script>
+	<script src="/public/scripts/lightbox.js" type="text/javascript" defer></script>
+	<script src="/public/scripts/albums.js" type="text/javascript" defer></script>
+	<style> ::-webkit-scrollbar {display: none;} </style>
+	
+	<title>Gallery</title>
 </head>
 
-<body>
+<body onload="myFunction()">
 
-<main>
-
-	<h1>Gallery</h1>
+	<div id="loader"></div>
 	
-	<input id="tab1" type="radio" name="tabs" checked>
-	<label for="tab1">Front</label>
+	<main>
 
-	<input id="tab2" type="radio"name="tabs">
-	<label for="tab2">Images</label>
+	<div style="display:none;" id="myDiv" class="animate">
 
-	<input id="tab3" type="radio" name="tabs">
-	<label for="tab3">Albums</label>
-
-	<input id="tab4" type="radio" name="tabs">
-	<label for="tab4">About</label>
-
-	<section id="content1">
-		<br><br><p>Welcome to the gallery!</p>
-	</section>
+		<h1>Gallery</h1>
 	
-	<section id="content2">
-		<br><br><p>Here's all the images listed in chronological order.</p>
-
-		<div class="gallery">
+		<input id="tab1" type="radio" name="tabs" checked>
+		<label for="tab1">Front</label>
 	
-		<table>
-			<c:forEach items="${images}" var="image">
+		<input id="tab2" type="radio"name="tabs">
+		<label for="tab2">Images</label>
+	
+		<input id="tab3" type="radio" name="tabs">
+		<label for="tab3">Albums</label>
+	
+		<input id="tab4" type="radio" name="tabs">
+		<label for="tab4">Info</label>
+		
+		<section id="content1">
+		
+		<div class="transition">	
+		
+			<br><br><p>Welcome to the gallery!</p>
+			
+		</div>
+		
+		</section>
+	
+		<section id="content2">
+		
+		<div class="transition">	
+		
+			<br><br><p>Here are the images.</p>
+			
+			<div class="container">
+				<div class="gallery">
+				
+				<c:forEach items="${images}" var="image">
+				
 				<c:url var="imageURL" value="/image" >
 					<c:param name="imageid" value="${image.imageid}"/>
 				</c:url>
-				<tr>
-					<td><img src="<c:out value="${imageURL}"/>‌‌"></td>
-				</tr>
-			</c:forEach>
-		</table>
+				
+				<ul>
+					<li>
+						<img src="${imageURL}">
+					</li>
+				</ul>
+		
+				</c:forEach>
+		
+				</div>
+			</div>
+			
+		</div>
+		
+		</section>
+		
+		<section id="content3">
+		
+		<div class="transition">
+		
+			<br><br><p>Here are the images that are neatly organized into albums.</p>
+			
+			<div class="container">
+				<div id="album-gallery" class="album-gallery">
+				
+				<c:forEach items="${albums}" var="album">
+				
+					<ul>
+						<li class="album">
+							<i class="fa fa-folder" aria-hidden="true"></i><br>
+							<b>${album.name}</b>
+						</li>
+					</ul>
+				
+				</c:forEach>
+				
+				<div id="modal">
 	
+					
+				
+				</div>
+
+				</div>
+			</div>
+
 		</div>
 
-	</section>
+		</section>
+
+		<section id="content4">
+
+		<div class="transition">
+
+			<br><br><p>This is an experimental image gallery made using Spring Boot, MySQL and various other tools.</p>
+			<br><br><p>© 2016 Albert Roschier</p>
+
+		</div>
+
+		</section>
+
+		</div>
 	
-	<section id="content3">
-		<br><br><p>Here are the images that are neatly organized into albums.</p>
-	</section>
-
-	<section id="content4">
-		<br><br><p>This is an experimental image gallery made using Spring Boot, MySQL and various other tools.</p>
-	</section>
-
-</main>
-
-<div class="footer">© 2016 Albert Roschier</div>
+	</main>
 
 </body>
 

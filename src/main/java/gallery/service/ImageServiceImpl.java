@@ -38,5 +38,10 @@ public class ImageServiceImpl implements ImageService {
 		
 		return images;
 	}
+
+	@Override
+	public List<Image> listAlbumimages(int albumid) {
+		return imageDao.listAlbumimages(albumid);
+	}
 	
 }

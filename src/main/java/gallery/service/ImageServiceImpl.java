@@ -40,8 +40,12 @@ public class ImageServiceImpl implements ImageService {
 	}
 
 	@Override
-	public List<Image> listAlbumimages(int albumid) {
-		return imageDao.listAlbumimages(albumid);
+	public List<Image> listImagesForAlbum(int albumId) {
+		List<Image> images = imageDao.listImagesForAlbum(albumId);
+		for (Image image : images) {
+			image.setFilepath(imageFolder + image.getFilepath());
+		
+		}
+		return images;
 	}
-	
 }

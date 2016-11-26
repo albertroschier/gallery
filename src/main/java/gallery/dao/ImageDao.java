@@ -10,6 +10,6 @@ public interface ImageDao {
 	
 	List<Image> listImages();
 	
-	List<Image> listAlbumimages(int albumid);
+	List<Image> listImagesForAlbum(int albumId);
 
 }

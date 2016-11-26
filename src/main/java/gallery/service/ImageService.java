@@ -10,6 +10,5 @@ public interface ImageService {
 	
 	List<Image> listImages();
 	
-	List<Image> listAlbumimages(int albumid);
-	
+	List<Image> listImagesForAlbum(int albumId);
 }

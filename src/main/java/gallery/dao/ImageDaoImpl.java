@@ -34,11 +34,9 @@ public class ImageDaoImpl implements ImageDao {
 		return jdbcTemplate.query("SELECT imageid, albumid, name, filepath FROM image", new ImageRowMapper());
 	}
 
-	@Override
-	public List<Image> listAlbumimages(int albumid) {
-		return jdbcTemplate.query("SELECT imageid, albumid, name, filepath FROM image WHERE albumid=?", new Object[] {albumid}, new ImageRowMapper());
+	public List<Image> listImagesForAlbum(int albumId) {
+		return jdbcTemplate.query("SELECT imageid, albumid, name, filepath FROM image WHERE albumid = ?", new Object[] {albumId}, new ImageRowMapper());
 	}
-
 }
 
 class ImageRowMapper implements RowMapper<Image> {

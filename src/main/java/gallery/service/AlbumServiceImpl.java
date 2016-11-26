@@ -30,7 +30,7 @@ public class AlbumServiceImpl implements AlbumService {
 		List<Album> albums = albumDao.listAlbums();
 		
 		for (Album album : albums) {
-			album.setImages(imageService.listAlbumimages(album.getAlbumid()));
+			album.setImages(imageService.listImagesForAlbum(album.getAlbumid()));
 		}
 		
 		return albums;

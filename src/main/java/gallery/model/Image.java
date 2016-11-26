@@ -3,6 +3,8 @@ package gallery.model;
 public class Image {
 	
 	private Integer imageid;
+	
+	private Integer albumid;
 
 	private String name;
 	
@@ -14,6 +16,14 @@ public class Image {
 
 	public void setImageid(Integer imageid) {
 		this.imageid = imageid;
+	}
+	
+	public Integer getAlbumid() {
+		return albumid;
+	}
+
+	public void setAlbumid(Integer albumid) {
+		this.albumid = albumid;
 	}
 
 	public String getName() {

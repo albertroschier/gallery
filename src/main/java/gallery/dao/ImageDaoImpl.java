@@ -34,6 +34,11 @@ public class ImageDaoImpl implements ImageDao {
 		return jdbcTemplate.query("SELECT imageid, albumid, name, filepath FROM image", new ImageRowMapper());
 	}
 
+	@Override
+	public List<Image> listAlbumimages(int albumid) {
+		return jdbcTemplate.query("SELECT imageid, albumid, name, filepath FROM image WHERE albumid=?", new Object[] {albumid}, new ImageRowMapper());
+	}
+
 }
 
 class ImageRowMapper implements RowMapper<Image> {
@@ -41,6 +46,7 @@ class ImageRowMapper implements RowMapper<Image> {
 	public Image mapRow(ResultSet arg0, int arg1) throws SQLException {
 		Image h = new Image();
 		h.setImageid(arg0.getInt("imageid"));
+		h.setAlbumid(arg0.getInt("albumid"));
 		h.setName(arg0.getString("name"));
 		h.setFilepath(arg0.getString("filepath"));
 		return h;

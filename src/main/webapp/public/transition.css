@@ -1,0 +1,29 @@
+.transition {
+	position: relative;
+	-webkit-animation-name: animate;
+	-webkit-animation-duration: 0.8s;
+	animation-name: animate;
+	animation-duration: 0.8s;
+}
+
+@-webkit-keyframes animate {
+	from { 
+		right: -100px; 
+		opacity: 0
+	}
+	to { 
+		right: 0px; 
+		opacity: 1
+	}
+}
+
+@keyframes animate {
+	from{ 
+		right: -100px; 
+		opacity: 0 
+	}
+	to{ 
+		right: 0; 
+		opacity: 1 
+	}
+}

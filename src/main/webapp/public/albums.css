@@ -1,0 +1,100 @@
+.album-gallery ul {
+	list-style: none;
+	padding: 0;
+}
+
+.album-gallery li {
+	float: left;
+	width: 28%;
+	margin: 2.5%;
+	position: relative;
+	transition: .25s box-shadow ease-in-out .1s;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.album-name {
+	line-height: 3.5;
+}
+
+@media only screen and (max-width: 680px) {
+	.album-gallery li {
+		width: 45%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.album-gallery li {
+		width: 100%;
+		margin: 2% 0;
+	}
+}
+
+.album-gallery li:hover {
+	cursor: pointer;
+	box-shadow: 4px 4px 0px #757575;
+	-webkit-transform: scale(1.02);
+	transform: scale(1.02);
+}
+
+.album {
+	background: #E0E0E0;
+	padding: 15px;
+}
+
+i {
+	padding-bottom: 5px;
+}
+
+.album-image-container {
+	max-width: inherit;
+	text-align: center;
+	padding: 30px;
+	overflow: scroll;
+	background: #BDBDBD;
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration: 1.6s;
+	animation-name: fadein;
+	animation-duration: 1.6s;
+}
+
+@-webkit-keyframes fadein {
+	from {
+		opacity:0
+	}
+	to {
+		opacity:1
+	}
+}
+
+@keyframes fadein {
+	from{
+		opacity:0
+	}
+	to{
+		opacity:1
+	}
+}
+
+#modal {
+    display: none;
+    z-index: 1;
+    padding-bottom: 15px;
+}
+
+.close {
+	color: #757575;
+	float: right;
+	font-size: 50px;
+	font-weight: bold;
+	cursor: default;
+}
+
+.close:hover,
+.close:focus {
+	color: #616161;
+	text-decoration: none;
+	cursor: pointer;
+}

@@ -9,5 +9,7 @@ public interface ImageDao {
 	Image getImage(int imageid);
 	
 	List<Image> listImages();
+	
+	List<Image> listAlbumimages(int albumid);
 
 }

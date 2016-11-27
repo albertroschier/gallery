@@ -1,5 +1,7 @@
 package gallery.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Image {
 	
 	private Integer imageid;
@@ -8,6 +10,7 @@ public class Image {
 
 	private String name;
 	
+	@JsonIgnore
 	private String filepath;
 
 	public Integer getImageid() {

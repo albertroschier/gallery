@@ -16,9 +16,6 @@ public class AlbumServiceImpl implements AlbumService {
 	@Autowired
 	private AlbumDao albumDao;
 	
-	@Autowired
-	private ImageService imageService;
-	
 	@Override
 	public Album getAlbum(int albumid) {
 		return albumDao.getAlbum(albumid);
@@ -28,12 +25,6 @@ public class AlbumServiceImpl implements AlbumService {
 	public List<Album> listAlbums() {
 		
 		List<Album> albums = albumDao.listAlbums();
-		
-		for (Album album : albums) {
-			album.setImages(imageService.listImagesForAlbum(album.getAlbumid()));
-		}
-		
 		return albums;
 	}
-
 }

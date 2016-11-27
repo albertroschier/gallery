@@ -79,7 +79,6 @@ i {
 }
 
 #modal {
-    display: none;
     z-index: 1;
     padding-bottom: 15px;
 }

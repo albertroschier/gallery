@@ -44,38 +44,13 @@
 	padding: 15px;
 }
 
-i {
-	padding-bottom: 5px;
-}
-
 .album-image-container {
+	float: left;
 	max-width: inherit;
 	text-align: center;
 	padding: 30px;
 	overflow: scroll;
 	background: #BDBDBD;
-	-webkit-animation-name: fadein;
-	-webkit-animation-duration: 1.6s;
-	animation-name: fadein;
-	animation-duration: 1.6s;
-}
-
-@-webkit-keyframes fadein {
-	from {
-		opacity:0
-	}
-	to {
-		opacity:1
-	}
-}
-
-@keyframes fadein {
-	from{
-		opacity:0
-	}
-	to{
-		opacity:1
-	}
 }
 
 #modal {

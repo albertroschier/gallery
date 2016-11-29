@@ -1,0 +1,39 @@
+form {
+	margin-bottom: 10;
+}
+
+#username, #password {
+	height: 44px;
+	font-size: 16px;
+	margin-bottom: 10px;
+	-webkit-appearance: none;
+	background: #FFF;
+	border: 1px solid #d9d9d9;
+	border-top: 1px solid #c0c0c0;
+	padding: 0 8px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+#login {
+	background: #E0E0E0;
+	padding: 15px;
+	width: 28%;
+	margin: 2.5%;
+	position: relative;
+	border: 1px transparent;
+	transition: .25s box-shadow ease-in-out .1s;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#login:hover {
+	background: #E0E0E0;
+	padding: 15px;
+	cursor: pointer;
+	box-shadow: 4px 4px 0px #757575;
+	-webkit-transform: scale(1.02);
+	transform: scale(1.02);
+}

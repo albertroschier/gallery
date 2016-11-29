@@ -1,22 +1,24 @@
-var $lightbox = $("<div class='lightbox'></div>");
-var $img = $("<img>");
+$(document).ready(function() {
+	
+	var $lightbox = $("<div class='lightbox'></div>");
+	var $img = $("<img>");
 
-$lightbox
-	.append($img)
+	$lightbox.append($img)
 
-$('body').append($lightbox);
+	$('body').append($lightbox);
 
+	$('.gallery li').click(function(e) {
+		e.preventDefault();
 
-$('.gallery li').click(function (e) {
-	e.preventDefault();
+		var src = $(this).children('img').attr("src");
 
-	var src = $(this).children('img').attr("src");
+		$img.attr('src', src);
 
-	$img.attr('src',src);
+		$lightbox.fadeIn('fast');
 
-	$lightbox.fadeIn('fast');
-
-	$lightbox.click(function () {
-		$lightbox.fadeOut('fast');
+		$lightbox.click(function() {
+			$lightbox.fadeOut('fast');
+		});
 	});
+	
 });

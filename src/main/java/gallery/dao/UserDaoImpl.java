@@ -16,6 +16,18 @@ import gallery.model.User;
 @Repository
 public class UserDaoImpl implements UserDao {
 
+	@Override
+	public User getUser(int userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> listUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }

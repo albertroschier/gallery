@@ -14,6 +14,18 @@ import gallery.model.User;
 @Service
 public class UserServiceImpl implements UserService {
 
+	@Override
+	public User getUser(int userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> listUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 }

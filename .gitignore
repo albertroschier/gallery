@@ -2,3 +2,6 @@
 .classpath
 .project
 .settings/
+/config/
+/src/main/resources/data-h2.sql
+/src/main/resources/schema-h2.sql

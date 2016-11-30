@@ -59,8 +59,8 @@
 		<section id="content1">
 
 			<div class="transition">
-
-				<br> <br>
+				
+				<br><br>
 				<p>Welcome to the gallery!</p>
 				
 				<br><p>This is an experimental image gallery made using Spring Boot,
@@ -122,22 +122,17 @@
 			<div class="transition">
 
 				<br> <br>
-				<p>Here you can log in and out.</p>
+				<p>And here's your account.</p>
 
 				<div class="container">
 					
-					<form>
-						<br><p>Log-in</p>
-						<input type="text" id="username" placeholder="Username"><br>
-						<input type="password" id="password" placeholder="Password"><br><br>
-						<input type="submit" id="login" value="Login">
-					</form>
+					
 				
 				</div>
 
 			</div>
 
-		</section>
+		</section> 
 
 	</div>
 

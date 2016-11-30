@@ -1,0 +1,43 @@
+
+Here's the structure of the MySQL database.
+
+/***********************************************************/
+
+CREATE DATABASE `gallery`;
+
+
+CREATE TABLE `album` (
+	`albumid` int(11) NOT NULL AUTO_INCREMENT,
+	`name` varchar(50) DEFAULT NULL,
+	PRIMARY KEY (`albumid`)
+);
+
+
+CREATE TABLE `image` (
+	`imageid` int(11) NOT NULL AUTO_INCREMENT,
+	`albumid` int(11) DEFAULT NULL,
+	`name` varchar(50) DEFAULT NULL,
+	`filepath` varchar(128) NOT NULL,
+	PRIMARY KEY (`imageid`),
+	KEY `fk_image_1_idx` (`albumid`),
+	CONSTRAINT `fk_image_1` FOREIGN KEY (`albumid`) REFERENCES `album` (`albumid`)
+);
+
+
+CREATE TABLE user (
+	username varchar(50) NOT NULL,
+	password varchar(50) NOT NULL,
+	first_name varchar(50) NOT NULL,
+	last_name varchar(50) NOT NULL,
+	enabled TINYINT NOT NULL DEFAULT 1,
+	PRIMARY KEY (username)
+);
+
+CREATE TABLE user_roles (
+	username varchar(45) NOT NULL,
+	role varchar(45) NOT NULL,
+	PRIMARY KEY (username, role),
+	CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES user (username)
+);
+
+/***********************************************************/

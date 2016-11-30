@@ -42,4 +42,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
       		    .csrf();
     }
+    
 }

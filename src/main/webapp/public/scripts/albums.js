@@ -30,14 +30,15 @@ var gallery = {
 		const imageList = $('<ul>')
 		$.each(images, function(index, item) {
 			var listItem = $('<li>')
+			var image = $('<img src="/image?imageid='+item.imageid+'">')
 			
-			listItem.append('<img src="/image?imageid='+item.imageid+'">')
+			listItem.append(image)
 			
 			listItem.click(function(e) {
 			e.preventDefault();
 
-			var $lightbox = $("<div class='lightbox'></div>");
-			var $img = $("<img>");
+			var $lightbox = $(".lightbox");
+			var $img = $lightbox.children('img')
 			
 			var src = $(this).children('img').attr("src");
 

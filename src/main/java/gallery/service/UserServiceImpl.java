@@ -3,7 +3,6 @@ package gallery.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,16 +13,15 @@ import gallery.model.User;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Override
-	public User getUser(int userid) {
-		
-		return null;
+	@Autowired
+	private UserDao userDao;
+
+	public User getUser(int username) {
+		return userDao.getUser(username);
 	}
 
-	@Override
-	public List<User> listUsers() {
-		
-		return null;
+	public List<User> listUser() {
+		return userDao.listUser();
 	}
 
 }

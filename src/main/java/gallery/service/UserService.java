@@ -6,8 +6,8 @@ import gallery.model.User;
 
 public interface UserService {
 
-	User getUser(int userid);
+	User getUser(int username);
 	
-	List<User> listUsers();
+	List<User> listUser();
 	
 }

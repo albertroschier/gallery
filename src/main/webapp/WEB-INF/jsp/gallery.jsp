@@ -75,8 +75,8 @@
 		<section id="content2">
 
 			<div class="transition">
-
-				<br> <br>
+				
+				<br><br>
 				<p>Here are the images.</p>
 
 				<div class="container">
@@ -122,11 +122,17 @@
 			<div class="transition">
 
 				<br> <br>
-				<p>And here's your account.</p>
+				<p>And here's your account information.</p>
 
 				<div class="container">
-					
-					
+						
+					<c:forEach items="${user}" var="user">
+						<tr>
+							<td>Username: <c:out value="${user.username}"/>‌‌</td>
+							<td>First name: <c:out value="${user.first_name}"/>‌‌</td>
+							<td>Last name: <c:out value="${user.last_name}"/>‌‌</td>
+						</tr>
+					</c:forEach>
 				
 				</div>
 

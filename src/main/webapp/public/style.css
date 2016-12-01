@@ -73,6 +73,8 @@ label {
 	text-align: center;
 	color: #757575;
 	border: 1px solid transparent;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 }
 
 label:before {

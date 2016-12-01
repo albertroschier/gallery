@@ -2,34 +2,34 @@ package gallery.model;
 
 public class User {
 	
-	private Integer userid;
+	private Integer username;
 
-	private String username;
+	private String first_name;
 	
-	private String password;
+	private String last_name;
 	
-	public Integer getUserid() {
-		return userid;
-	}
-
-	public void setUserid(Integer userid) {
-		this.userid = userid;
-	}
-
-	public String getUserame() {
+	public Integer getUsername() {
 		return username;
 	}
 
-	public void setUserame(String username) {
+	public void setUsername(Integer username) {
 		this.username = username;
 	}
-	
-	public String getPassword() {
-		return password;
+
+	public String getFirstname() {
+		return first_name;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setFirstname(String first_name) {
+		this.first_name = first_name;
+	}
+	
+	public String getLastname() {
+		return last_name;
+	}
+
+	public void setLastname(String last_name) {
+		this.last_name = last_name;
 	}
 	
 }

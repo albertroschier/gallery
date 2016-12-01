@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%
 	response.setHeader("Cache-Control", "no-cache");
@@ -6,12 +6,12 @@
 	response.setHeader("Expires", "0");
 %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <c:set var="ctx" value="${pageContext['request'].contextPath}" />
 
@@ -106,7 +106,7 @@
 
 			<div class="transition">
 
-				<br> <br>
+				<br><br>
 				<p>Here are the albums.</p>
 
 				<div id="albumContainer" class="container">
@@ -121,7 +121,7 @@
 
 			<div class="transition">
 
-				<br> <br>
+				<br><br>
 				<p>And here's your account information.</p>
 
 				<div class="container">

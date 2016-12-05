@@ -6,7 +6,7 @@ import gallery.model.User;
 
 public interface UserDao {
 	
-	User getUser(int userid);
+	User getUser(int username);
 	
 	List<User> listUser();
 	

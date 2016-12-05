@@ -125,7 +125,8 @@
 				<p>And here's your account information.</p>
 
 				<div class="container">
-						
+					
+				<table>
 					<c:forEach items="${user}" var="user">
 						<tr>
 							<td>Username: <c:out value="${user.username}"/>‌‌</td>
@@ -133,7 +134,8 @@
 							<td>Last name: <c:out value="${user.last_name}"/>‌‌</td>
 						</tr>
 					</c:forEach>
-				
+				</table>
+					
 				</div>
 
 			</div>

@@ -6,7 +6,7 @@
 <head>
 
 	<link href="/public/style.css" rel="stylesheet" type="text/css" />
-	<link href="/public/login.css" rel="stylesheet" type="text/css" />
+	<link href="/public/form.css" rel="stylesheet" type="text/css" />
 
 	<title>Login Page</title>
 
@@ -32,7 +32,7 @@
 		<p>Login</p>
 
 		<form name='loginForm' action="<c:url value='/login' />" method='POST'>
-					
+		
 			<tr>
 				<td><input type='text' id="username" name='username' placeholder="Username"></td>
 			</tr><br>
@@ -46,7 +46,7 @@
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 		</form>
-		
+
 	</div>
 
 </main>

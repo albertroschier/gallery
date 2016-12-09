@@ -6,7 +6,7 @@ import gallery.model.User;
 
 public interface UserService {
 
-	User getUser(int username);
+	User getUser(String username);
 	
 	List<User> listUser();
 	

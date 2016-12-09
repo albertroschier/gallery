@@ -37,6 +37,10 @@ public class ImageDaoImpl implements ImageDao {
 	public List<Image> listImagesForAlbum(int albumId) {
 		return jdbcTemplate.query("SELECT imageid, albumid, name, filepath FROM image WHERE albumid = ?", new Object[] {albumId}, new ImageRowMapper());
 	}
+	
+	public void uploadImage(String filepath) {
+		jdbcTemplate.update("INSERT INTO images (filepath) VALUES (?)", new Object[] {filepath} );
+	}
 }
 
 class ImageRowMapper implements RowMapper<Image> {

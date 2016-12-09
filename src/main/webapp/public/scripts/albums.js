@@ -21,12 +21,14 @@ var gallery = {
 	generateAlbumContents: function(root, albumName, images) {
 		const albumContainer = $('<div class="album-image-container"></div>')
 		albumContainer.append(
+		'<div class="transition">' +
 		'<div class="modal-header">' +
 		'<span class="close" onclick="gallery.closeModal()">×</span>' +
 		'<p class="album-name">'+albumName+'</p>' +
+		'</div>' +
 		'</div>'
 		)
-			
+	
 		const imageList = $('<ul>')
 		$.each(images, function(index, item) {
 			var listItem = $('<li>')

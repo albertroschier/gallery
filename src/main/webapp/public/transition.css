@@ -13,17 +13,17 @@
 	}
 	to { 
 		right: 0px; 
-		opacity: 1
+		opacity: 1;
 	}
 }
 
 @keyframes animate {
-	from{ 
+	from { 
 		right: -100px; 
-		opacity: 0 
+		opacity: 0;
 	}
-	to{ 
-		right: 0; 
-		opacity: 1 
+	to { 
+		right: 0px; 
+		opacity: 1;
 	}
 }

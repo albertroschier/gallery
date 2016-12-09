@@ -12,29 +12,11 @@
 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 
 <c:set var="ctx" value="${pageContext['request'].contextPath}" />
 
-<html>
-
-<head>
-
-	<link href="/public/loader.css" rel="stylesheet" type="text/css" />
-	<link href="/public/style.css" rel="stylesheet" type="text/css" />
-	<link href="/public/images.css" rel="stylesheet" type="text/css" />
-	<link href="/public/albums.css" rel="stylesheet" type="text/css" />
-	<link href="/public/login.css" rel="stylesheet" type="text/css" />
-	<link href="/public/transition.css" rel="stylesheet" type="text/css" />
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="/public/scripts/loader.js" type="text/javascript"></script>
-	<script src="/public/scripts/lightbox.js" type="text/javascript"></script>
-	<script src="/public/scripts/albums.js" type="text/javascript"></script>
-	
-	<title>Gallery</title>
-	
-</head>
-
-<body onload="myFunction()">
+<tags:layout>
 
 	<div id="loader"></div>
 
@@ -46,62 +28,62 @@
 
 		<input id="tab1" type="radio" name="tabs" checked> 
 		<label for="tab1">Front</label> 
-		
+
 		<input id="tab2" type="radio" name="tabs">
 		<label for="tab2">Images</label>
-		
+
 		<input id="tab3" type="radio" name="tabs"> 
 		<label for="tab3">Albums</label> 
-		
+
 		<input id="tab4" type="radio" name="tabs"> 
 		<label for="tab4">Account</label>
 
 		<section id="content1">
 
 			<div class="transition">
-				
+
 				<br><br>
 				<p>Welcome to the gallery!</p>
-				
+
 				<br><p>This is an experimental image gallery made using Spring Boot,
 				<br>MySQL and various other tools.</p>
-				<br><br>
+				<br><br><br>
 				<p>© 2016 Albert Roschier</p>
-				
+
 			</div>
 
 		</section>
-		
+
 		<section id="content2">
 
 			<div class="transition">
-				
+
 				<br><br>
-				<p>Here are the images.</p>
+				<p>Here are the images. <a href="/upload">Click here to upload more</a></p>
 
 				<div class="container">
 					<div class="gallery">
-						 
+
 						<c:forEach items="${images}" var="image">
-				
+
 							<c:url var="imageURL" value="/image" >
 								<c:param name="imageid" value="${image.imageid}"/>
 							</c:url>
-					
+
 							<ul>
 								<li>
 									<img src="${imageURL}">
 								</li>
 							</ul>
-		
+
 						</c:forEach>
-						 
+
 					</div>
 				</div>
-				
+
 			</div>
 		</section>
-		
+
 		<section id="content3">
 
 			<div class="transition">
@@ -110,10 +92,10 @@
 				<p>Here are the albums.</p>
 
 				<div id="albumContainer" class="container">
-						<ul class="album-gallery"></ul>
-						<div id="modal"></div>
+					<ul class="album-gallery"></ul>
+					<div id="modal"></div>
 				</div>
-				
+
 			</div>
 		</section>
 
@@ -125,17 +107,19 @@
 				<p>And here's your account information.</p>
 
 				<div class="container">
+
+					<div id="account">
 					
-				<table>
-					<c:forEach items="${user}" var="user">
-						<tr>
-							<td>Username: <c:out value="${user.username}"/>‌‌</td>
-							<td>First name: <c:out value="${user.first_name}"/>‌‌</td>
-							<td>Last name: <c:out value="${user.last_name}"/>‌‌</td>
-						</tr>
-					</c:forEach>
-				</table>
-					
+						<br>
+						<b>Username:</b> <c:out value="${user.username}"/>
+						<br><br>
+						<b>First name:</b> <c:out value="${user.firstname}"/>
+						<br><br>
+						<b>Last name:</b> <c:out value="${user.lastname}"/>
+						<br><br>
+						
+					</div>
+
 				</div>
 
 			</div>
@@ -146,6 +130,4 @@
 
 	</main>
 
-</body>
-
-</html>
+</tags:layout>

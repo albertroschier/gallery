@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import gallery.service.AlbumService;
 import gallery.service.ImageService;
+import gallery.service.UserService;
+import gallery.util.SecurityUtil;
 
 @Controller
 public class GalleryController {
@@ -16,6 +18,7 @@ public class GalleryController {
 	public String frontpage (Map<String, Object> model) {
 		model.put("images", imageService.listImages());
 		model.put("albums", albumService.listAlbums());
+		model.put("user", userService.getUser(SecurityUtil.getAuth().getName()));
 		return "gallery";
 	}
 	
@@ -24,5 +27,8 @@ public class GalleryController {
 	
 	@Autowired
 	private AlbumService albumService;
+	
+	@Autowired
+	private UserService userService;
 	
 }

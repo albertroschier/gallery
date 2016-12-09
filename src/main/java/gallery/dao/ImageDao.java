@@ -11,5 +11,7 @@ public interface ImageDao {
 	List<Image> listImages();
 	
 	List<Image> listImagesForAlbum(int albumId);
+	
+	void uploadImage(String filepath);
 
 }

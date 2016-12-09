@@ -13,6 +13,7 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-user-select: none;
+	cursor: crosshair;
 }
 
 *, *:before, *:after {
@@ -50,6 +51,15 @@ h1 {
 p {
 	margin: 0 0 30px;
 	line-height: 1.5;
+}
+
+a {
+	color: #EF6C00;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FB8C00;
 }
 
 main {
@@ -128,4 +138,9 @@ input:checked+label {
 		margin: 0;
 		font-size: 18px;
 	}
+}
+
+#account {
+	text-align: left;
+	margin-left: 17px;
 }

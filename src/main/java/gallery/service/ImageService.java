@@ -2,6 +2,7 @@ package gallery.service;
 
 import java.util.List;
 
+import gallery.ImageUploadForm;
 import gallery.model.Image;
 
 public interface ImageService {
@@ -11,4 +12,6 @@ public interface ImageService {
 	List<Image> listImages();
 	
 	List<Image> listImagesForAlbum(int albumId);
+	
+	void uploadImage(ImageUploadForm iuf);
 }

@@ -3,24 +3,24 @@ Here's the structure of the MySQL database.
 
 /***********************************************************/
 
-CREATE DATABASE `gallery`;
+CREATE DATABASE gallery;
 
 
-CREATE TABLE `album` (
-	`albumid` int(11) NOT NULL AUTO_INCREMENT,
-	`name` varchar(50) DEFAULT NULL,
-	PRIMARY KEY (`albumid`)
+CREATE TABLE album (
+	albumid int(11) NOT NULL AUTO_INCREMENT,
+	name varchar(50) DEFAULT NULL,
+	PRIMARY KEY (albumid)
 );
 
 
-CREATE TABLE `image` (
-	`imageid` int(11) NOT NULL AUTO_INCREMENT,
-	`albumid` int(11) DEFAULT NULL,
-	`name` varchar(50) DEFAULT NULL,
-	`filepath` varchar(128) NOT NULL,
-	PRIMARY KEY (`imageid`),
-	KEY `fk_image_1_idx` (`albumid`),
-	CONSTRAINT `fk_image_1` FOREIGN KEY (`albumid`) REFERENCES `album` (`albumid`)
+CREATE TABLE image (
+	imageid int(11) NOT NULL AUTO_INCREMENT,
+	albumid int(11) DEFAULT NULL,
+	name varchar(50) DEFAULT NULL,
+	filepath varchar(128) NOT NULL,
+	PRIMARY KEY (imageid),
+	KEY fk_image_1_idx (albumid),
+	CONSTRAINT fk_image_1 FOREIGN KEY (albumid) REFERENCES album (albumid)
 );
 
 

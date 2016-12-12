@@ -1,16 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ page session="true" %>
 
-<html>
-
-<head>
-
-	<link href="/public/style.css" rel="stylesheet" type="text/css" />
-	<link href="/public/form.css" rel="stylesheet" type="text/css" />
-
-	<title>Login Page</title>
-
-</head>
+<tags:layout>
 
 <body onload='document.loginForm.username.focus();'>
 
@@ -40,7 +32,7 @@
 				<td><input type='password' id="password" name='password' placeholder="Password" /></td>
 			</tr><br><br>
 			<tr>
-				<td colspan='2'><input name="submit" id="login" type="submit" value="Submit" /></td>
+				<td colspan='2'><input name="submit" id="submit" type="submit" value="Submit" /></td>
 			</tr>
 
 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
@@ -53,4 +45,4 @@
 
 </body>
 
-</html>
+</tags:layout>

@@ -14,4 +14,5 @@ public interface ImageDao {
 	
 	void uploadImage(String filepath);
 
+	void deleteImage(Image image);
 }

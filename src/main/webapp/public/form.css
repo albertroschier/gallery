@@ -43,7 +43,6 @@ input[type="file"] {
 }
 
 .custom-file-upload {
-	cursor: pointer;
 	background: #E0E0E0;
 	padding: 15px;
 	width: 50%;
@@ -78,7 +77,6 @@ input[type="file"] {
 #submit:hover {
 	background: #E0E0E0;
 	padding: 15px;
-	cursor: pointer;
 	box-shadow: 4px 4px 0px #757575;
 	-webkit-transform: scale(1.02);
 	transform: scale(1.02);

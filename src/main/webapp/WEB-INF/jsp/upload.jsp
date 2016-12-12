@@ -1,25 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ page session="true" %>
 
-<html>
-
-<head>
-
-	<link href="/public/style.css" rel="stylesheet" type="text/css" />
-	<link href="/public/form.css" rel="stylesheet" type="text/css" />
-	
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-	<title>Upload Page</title>
-
-</head>
-
-<body>
+<tags:layout>
 
 <main>
 
-	<h1>Gallery</h1>
+	<a href="/gallery" title="Click here to go back to the gallery."><h1>Gallery</h1></a>
 
 	<p>Upload a new image to the gallery.</p>
 
@@ -39,8 +27,6 @@
 			<tr>
 				<td colspan='2'><input id="submit" type="submit" value="Upload" /></td>
 			</tr>
-			
-			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 		</form:form>
 
@@ -48,19 +34,17 @@
 	
 	</div>
 
+	<script type="text/javascript">
+	
+	$('#file').change(function() {
+		var filepath = this.value;
+		var m = filepath.match(/([^\/\\]+)$/);
+		var filename = m[1];
+		$('#filename').html(filename);
+	});
+	
+	</script>
+
 </main>
 
-<script type="text/javascript">
-
-$('#file').change(function() {
-	var filepath = this.value;
-	var m = filepath.match(/([^\/\\]+)$/);
-	var filename = m[1];
-	$('#filename').html(filename);
-});
-
-</script>
-
-</body>
-
-</html>
+</tags:layout>

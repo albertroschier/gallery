@@ -1,11 +1,8 @@
 package gallery;
 
-import javax.servlet.ServletContext;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
-import org.springframework.web.multipart.support.MultipartFilter;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -18,14 +15,14 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 		registry.addViewController("/").setViewName("redirect:/gallery");
 	}
 
-	@Bean (name = "filterMultipartResolver")
-	public CommonsMultipartResolver filterMultipartResolver() {
-	
-	CommonsMultipartResolver filterMultipartResolver = new CommonsMultipartResolver();
-	filterMultipartResolver.setDefaultEncoding("utf-8");
-	//resolver.setMaxUploadSize(512000);
-	return filterMultipartResolver;
-	
-	}
+//	@Bean (name = "filterMultipartResolver")
+//	public CommonsMultipartResolver filterMultipartResolver() {
+//	
+//	CommonsMultipartResolver filterMultipartResolver = new CommonsMultipartResolver();
+//	filterMultipartResolver.setDefaultEncoding("utf-8");
+//	//resolver.setMaxUploadSize(512000);
+//	return filterMultipartResolver;
+//	
+//	}
 
 }

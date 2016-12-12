@@ -9,6 +9,7 @@
 	<link href="/public/images.css" rel="stylesheet" type="text/css" />
 	<link href="/public/albums.css" rel="stylesheet" type="text/css" />
 	<link href="/public/transition.css" rel="stylesheet" type="text/css" />
+	<link href="/public/form.css" rel="stylesheet" type="text/css" />
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="/public/scripts/loader.js" type="text/javascript"></script>

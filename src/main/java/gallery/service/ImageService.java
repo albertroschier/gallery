@@ -14,4 +14,6 @@ public interface ImageService {
 	List<Image> listImagesForAlbum(int albumId);
 	
 	void uploadImage(ImageUploadForm iuf);
+	
+	void deleteImage(Image image);
 }

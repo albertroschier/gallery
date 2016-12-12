@@ -33,7 +33,6 @@
 }
 
 .album-gallery li:hover {
-	cursor: pointer;
 	box-shadow: 4px 4px 0px #757575;
 	-webkit-transform: scale(1.02);
 	transform: scale(1.02);
@@ -69,5 +68,4 @@
 .close:focus {
 	color: #616161;
 	text-decoration: none;
-	cursor: pointer;
 }

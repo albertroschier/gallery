@@ -39,8 +39,14 @@ public class ImageDaoImpl implements ImageDao {
 	}
 	
 	public void uploadImage(String filepath) {
-		jdbcTemplate.update("INSERT INTO images (filepath) VALUES (?)", new Object[] {filepath} );
+		jdbcTemplate.update("INSERT INTO image (filepath) VALUES (?)", new Object[] {filepath} );
 	}
+
+	@Override
+	public void deleteImage(Image image) {
+		jdbcTemplate.update("DELETE FROM image WHERE imageid=?", new Object[] {image} );
+	}
+	
 }
 
 class ImageRowMapper implements RowMapper<Image> {

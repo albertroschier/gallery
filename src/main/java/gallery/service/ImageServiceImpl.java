@@ -50,6 +50,7 @@ public class ImageServiceImpl implements ImageService {
 			image.setFilepath(imageFolder + image.getFilepath());
 		
 		}
+		
 		return images;
 	}
 
@@ -61,9 +62,15 @@ public class ImageServiceImpl implements ImageService {
 		FileOutputStream out = new FileOutputStream(filepath);
 		out.write(iuf.getImageUpload().getBytes());
 			out.close();
-			imageDao.uploadImage(filepath);
+			imageDao.uploadImage(randomUUIDString);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public void deleteImage(Image image) {
+		imageDao.deleteImage(image);
+	}
+	
 }

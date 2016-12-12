@@ -112,7 +112,6 @@ label[for*='4']:before {
 label:hover {
 	color: #EEEEEE;
 	background: #FFCC80;
-	cursor: pointer;
 }
 
 input:checked+label {

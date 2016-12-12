@@ -1,17 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 
-<html>
-
-<head>
-
-	<link href="/public/style.css" rel="stylesheet" type="text/css" />
-	<link href="/public/form.css" rel="stylesheet" type="text/css" />
-
-	<title>HTTP Status 403</title>
-
-</head>
-
-<body>
+<tags:layout>
 
 <main>
 
@@ -28,7 +18,7 @@
 		</c:when>
 
 		<c:otherwise>
-			<p>Username : ${username} <br /> You do not have permission to access this page!</p3>
+			<p>Username : ${username} <br /> You do not have permission to access this page!</p>
 		</c:otherwise>
 
 	</c:choose>
@@ -37,6 +27,4 @@
 
 </main>
 
-</body>
-
-</html>
+</tags:layout>

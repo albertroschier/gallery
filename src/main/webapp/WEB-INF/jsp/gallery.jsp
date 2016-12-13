@@ -27,13 +27,13 @@
 		<h1>Gallery</h1>
 
 		<input id="tab1" type="radio" name="tabs" checked> 
-		<label for="tab1">Front</label> 
+		<label for="tab1">Front</label>
 
 		<input id="tab2" type="radio" name="tabs">
 		<label for="tab2">Images</label>
 
 		<input id="tab3" type="radio" name="tabs"> 
-		<label for="tab3">Albums</label> 
+		<label for="tab3">Albums</label>
 
 		<input id="tab4" type="radio" name="tabs"> 
 		<label for="tab4">Account</label>

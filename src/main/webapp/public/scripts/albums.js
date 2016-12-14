@@ -17,7 +17,7 @@ var gallery = {
 			gallery.generateAlbumContents(root, name, data)
 		});
 	},
-	
+
 	generateAlbumContents: function(root, albumName, images) {
 		const albumContainer = $('<div class="album-image-container"></div>')
 		albumContainer.append(
@@ -28,12 +28,12 @@ var gallery = {
 		'</div>' +
 		'</div>'
 		)
-	
+
 		const imageList = $('<ul>')
 		$.each(images, function(index, item) {
 			var listItem = $('<li>')
 			var image = $('<img src="/image?imageid='+item.imageid+'">')
-			
+	
 			listItem.append(image)
 			
 			listItem.click(function(e) {

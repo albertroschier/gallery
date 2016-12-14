@@ -26,16 +26,16 @@
 
 		<h1>Gallery</h1>
 
-		<input id="tab1" type="radio" name="tabs" checked> 
+		<input id="tab1" type="radio" name="tabs" checked>
 		<label for="tab1">Front</label>
 
 		<input id="tab2" type="radio" name="tabs">
 		<label for="tab2">Images</label>
 
-		<input id="tab3" type="radio" name="tabs"> 
+		<input id="tab3" type="radio" name="tabs">
 		<label for="tab3">Albums</label>
 
-		<input id="tab4" type="radio" name="tabs"> 
+		<input id="tab4" type="radio" name="tabs">
 		<label for="tab4">Account</label>
 
 		<section id="content1">
@@ -45,7 +45,7 @@
 				<br><br>
 				<p>Welcome to the gallery!</p>
 
-				<br><p>This is an experimental image gallery made using Spring Boot,
+				<br><p>This is an experimental single page image gallery made using Spring Boot,
 				<br>MySQL and various other tools.</p>
 				<br><br><br>
 				<p>© 2016 Albert Roschier</p>
@@ -59,14 +59,14 @@
 			<div class="transition">
 
 				<br><br>
-				<p>Here are the images. <a href="/upload">Click here to upload more</a></p>
+				<p>Here are all of the images. <a href="/upload">Click here to upload more</a></p>
 
 				<div class="container">
 					<div class="gallery">
 
 						<c:forEach items="${images}" var="image">
 
-							<c:url var="imageURL" value="/image" >
+							<c:url var="imageURL" value="/image">
 								<c:param name="imageid" value="${image.imageid}"/>
 							</c:url>
 
@@ -82,6 +82,7 @@
 				</div>
 
 			</div>
+
 		</section>
 
 		<section id="content3">

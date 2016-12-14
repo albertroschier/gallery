@@ -15,5 +15,6 @@ public interface ImageService {
 	
 	void uploadImage(ImageUploadForm iuf);
 	
-	void deleteImage(Image image);
+	void deleteImage(int imageid);
+	
 }

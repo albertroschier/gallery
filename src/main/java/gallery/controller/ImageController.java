@@ -33,4 +33,10 @@ public class ImageController {
 		.body(new InputStreamResource(new FileInputStream(imageFile)));
 	}
 	
+	@GetMapping(value = "/image/delete")
+	public String delete(@RequestParam Integer imageid) {
+		imageService.deleteImage(imageid);
+		return "redirect:/gallery";
+	}
+	
 }

@@ -16,14 +16,14 @@ import gallery.dao.ImageRowMapper;
 
 @Repository
 public class ImageDaoImpl implements ImageDao {
-	
+
 	private JdbcTemplate jdbcTemplate;
 
 	@Autowired
 	public void setDataSource(DataSource datasource) {
 		jdbcTemplate = new JdbcTemplate(datasource);
 	}
-	
+
 	@Override
 	public Image getImage(int imageid) {
 		return jdbcTemplate.queryForObject("SELECT imageid, albumid, name, filepath FROM image WHERE imageid=?", new Object[] {imageid}, new ImageRowMapper());
@@ -41,12 +41,12 @@ public class ImageDaoImpl implements ImageDao {
 	public void uploadImage(String filepath) {
 		jdbcTemplate.update("INSERT INTO image (filepath) VALUES (?)", new Object[] {filepath} );
 	}
-
-	@Override
-	public void deleteImage(Image image) {
-		jdbcTemplate.update("DELETE FROM image WHERE imageid=?", new Object[] {image} );
-	}
 	
+	@Override
+	public void deleteImage(int imageid) {
+		jdbcTemplate.update("DELETE FROM image WHERE imageid = ?", new Object[] {imageid} );
+	}
+
 }
 
 class ImageRowMapper implements RowMapper<Image> {

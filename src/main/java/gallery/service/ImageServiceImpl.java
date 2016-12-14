@@ -1,5 +1,6 @@
 package gallery.service;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -68,9 +69,11 @@ public class ImageServiceImpl implements ImageService {
 		}
 	}
 
-	@Override
-	public void deleteImage(Image image) {
-		imageDao.deleteImage(image);
+	public void deleteImage(int imageid) {
+		Image delete = getImage(imageid);
+		File file = new File(imageFolder + delete.getFilepath());
+		file.delete();
+		imageDao.deleteImage(imageid);
 	}
 	
 }

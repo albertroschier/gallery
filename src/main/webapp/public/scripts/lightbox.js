@@ -3,7 +3,7 @@ $(document).ready(function() {
 	var $lightbox = $("<div class='lightbox'></div>");
 	var $img = $("<img>");
 
-	$lightbox.append($img)
+	$lightbox.append($img);
 
 	$('body').append($lightbox);
 
@@ -22,3 +22,9 @@ $(document).ready(function() {
 	});
 	
 });
+
+//$lightbox.append(
+//"<c:url var='deleteURL' value='/image/delete'>" +
+//"<c:param name='imageid' value='${image.imageid}'/>" +
+//"</c:url><a class='delete' href='<c:out value='${deleteURL}'/>Delete</a>"
+//)

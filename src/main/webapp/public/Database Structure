@@ -33,11 +33,16 @@ CREATE TABLE user (
 	PRIMARY KEY (username)
 );
 
-CREATE TABLE user_roles (
-	username varchar(45) NOT NULL,
-	role varchar(45) NOT NULL,
-	PRIMARY KEY (username, role),
-	CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES user (username)
-);
+
+
+Not implemented (yet):
+
+
+/CREATE TABLE user_roles (
+/	username varchar(45) NOT NULL,
+/	role varchar(45) NOT NULL,
+/	PRIMARY KEY (username, role),
+/	CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES user (username)
+/);
 
 /***********************************************************/

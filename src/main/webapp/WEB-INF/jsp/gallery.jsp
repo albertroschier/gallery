@@ -80,7 +80,7 @@
 
 					</div>
 				</div>
-
+					
 			</div>
 
 		</section>
@@ -132,3 +132,11 @@
 	</main>
 
 </tags:layout>
+
+<!--
+
+<c:url var='deleteURL' value='/image/delete'>
+<c:param name='imageid' value='${image.imageid}'/>
+</c:url><a class='context-menu__link' class='delete' href='<c:out value='${deleteURL}'/>'><i class='fa fa-trash'></i>  Delete</a>
+
+-->

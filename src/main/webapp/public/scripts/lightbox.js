@@ -7,7 +7,7 @@ $(document).ready(function() {
 
 	$('body').append($lightbox);
 
-	$('.gallery li').click(function(e) {
+	$('.gallery li div').click(function(e) {
 		e.preventDefault();
 
 		var src = $(this).children('img').attr("src");
@@ -22,9 +22,3 @@ $(document).ready(function() {
 	});
 	
 });
-
-//$lightbox.append(
-//"<c:url var='deleteURL' value='/image/delete'>" +
-//"<c:param name='imageid' value='${image.imageid}'/>" +
-//"</c:url><a class='delete' href='<c:out value='${deleteURL}'/>Delete</a>"
-//)

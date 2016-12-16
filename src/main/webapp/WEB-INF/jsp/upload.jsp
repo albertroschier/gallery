@@ -7,7 +7,7 @@
 
 <main>
 
-	<a href="/gallery" title="Click here to go back to the gallery."><h1>Gallery</h1></a>
+	<a href="/gallery" title="Click here to go back to the main page."><h1>Gallery</h1></a>
 
 	<p>Upload a new image to the gallery.</p>
 
